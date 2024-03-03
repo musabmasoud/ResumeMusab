@@ -1,4 +1,4 @@
-/*===== GOOGLE FONTS =====*/
+﻿/*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 /*===== VARIABLES CSS =====*/
 :root {
@@ -199,7 +199,7 @@ img {
 }
 
 .home__title {
-  font-size: var(--big-font-size);
+  font-size: 52px;
   margin-bottom: var(--mb-5);
 }
 
@@ -528,3 +528,34 @@ img {
     width: 450px;
   }
 }
+.moving-text {
+    animation: moveText 5s infinite linear; /* تحريك النص بسرعة ثابتة بدون توقف */
+    white-space: nowrap; /* يجعل النص لا ينقسم عند التحريك */
+    overflow: hidden; /* يخفي النص الذي يتجاوز حجم العنصر */
+}
+
+/*@keyframes moveText {
+    0% {
+        transform: translateX(0%);
+    }*/
+    /* تبدأ الحركة من اليسار */
+    /*100% {
+        transform: translateX(100%);
+    }*/
+    /* تنتهي الحركة عند الوصول إلى اليمين */
+/*}*/
+/*.moving-text {
+    animation: moveText 1s forwards;
+    white-space: nowrap;*/ /* يجعل النص لا ينقسم عند تحريك حرف حرف */
+    /*overflow: hidden;*/ /* يخفي الأحرف التي لم تتحرك بعد */
+/*}*/
+
+/*@keyframes moveText {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}*/

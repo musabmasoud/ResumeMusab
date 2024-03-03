@@ -9,8 +9,10 @@
     <!-- =====BOX ICONS===== -->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>Portfolio website complete</title>
+    <title>Portfolio website</title>
+    <link rel="icon" type="image/png" href="assets/img/musabpng.png" sizes="16x16">
 </head>
+
 <body>
     <!--===== HEADER =====-->
     <header class="l-header">
@@ -40,9 +42,9 @@
         <!--===== HOME =====-->
         <section class="home bd-grid" id="home">
             <div class="home__data">
-                <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Musab</span><br> Dotnet Developer</h1>
+                <h1 class="home__title , moving-text">Hi,<br>I'am <span class="home__title-color">Musab</span><br><p id ="moving-text">Dotnet Developer</p> </h1>
 
-                <a href="#" class="button">Contact</a>
+                <a href="https://wa.me/+966509703771" class="button">Contact</a>
             </div>
 
             <div class="home__social">
@@ -71,7 +73,7 @@
 
             <div class="about__container bd-grid">
                 <div class="about__img">
-                    <img src="~/assets/img/IMG_5569.JPG" alt="">
+                    <img src="~/assets/img/imm.png" alt="">
                 </div>
 
                 <div>
@@ -87,10 +89,10 @@
             <div class="experience__container bd-grid">
                 <div>
                     <h2 class="about__subtitle" style="color: #000;">Dotnet Developer</h2>
-                    <span style="float: right; color: blue;">02.2022 - Current</span>
+                    <span style="float: right; color: blue;">02-2022 - Current</span>
                     <h1 class="about__subtitle" style="color:dimgray;">TOQ FOR INFORMATION TECHNOLOGY</h1>
                     <br />
-                    <p class="about__text"> Designing databases using SQL Server and designing Windows Form Applications<</p>
+                    <p class="about__text"> Designing databases using SQL Server and designing Windows Form Applications</p>
                     <p class="about__text"> Creating websites using MVC and API integration them with payment gateways and other companies</p>
                     <p class="about__text"> Lead the development team in code reviews, technical discussions, and problem-solving</p>
                 </div>
@@ -98,11 +100,11 @@
                 <br />
                 <div>
                     <h2 class= "about__subtitle" style="color: #000;">Technical Supervisor</h2>
-                    <span style="float: right; color: blue;">06.2018 - 01-2022</span>
+                    <span style="float: right; color: blue;">06-2018 - 01-2022</span>
                     <h1 class="about__subtitle" style="color:dimgray;">Ministry of Finance and Economy</h1>
                     <br />
                     <p class="about__text">Create users to access the pages of accountants, collectors, and auditors</p>
-                    <p class="about__text">Integrating mobile devices and network devices with the Ministry of Finance for the collection process<</p>
+                    <p class="about__text">Integrating mobile devices and network devices with the Ministry of Finance for the collection process</p>
                     <p class="about__text">Develop and deliver technical training programs for staff members</p>
                     <p class="about__text">Oversee the maintenance and troubleshooting of hardware and software systems</p>
 
@@ -111,7 +113,7 @@
                 <br />
                 <div>
                     <h2 class="about__subtitle" style="color: #000;">Dotnet Developer</h2>
-                    <span style="float: right; color: blue;">06.2017 - 01-2019</span>
+                    <span style="float: right; color: blue;">06-2017 - 01-2019</span>
                     <h1 class="about__subtitle" style="color:dimgray;">Freelancer</h1><br>
                     <p class="about__text">Full-stack Developer</p>
                 </div>
@@ -221,7 +223,7 @@
             <h2 class="section-title">Contact</h2>
 
             <div class="contact__container bd-grid">
-                <form action="" class="contact__form">
+                <form action="musab.masoud@yahoo.com" method="post" enctype="text/plain" class="contact__form">
                     <input type="text" placeholder="Name" class="contact__input">
                     <input type="mail" placeholder="Email" class="contact__input">
                     <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
@@ -250,5 +252,55 @@
 
     <!--===== MAIN JS =====-->
     <script src="~/assets/js/main.js"></script>
+   @*  <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var textElement = document.getElementById("dynamic-text");
+            var textContent = textElement.innerText;
+            var index = 0;
+
+            function animateText() {
+                if (index < textContent.length) {
+                    textElement.innerText = textContent.slice(0, index + 1);
+                    index++;
+                    setTimeout(animateText, 100); // تحريك حرف كل 100 مللي ثانية
+                } else {
+                    setTimeout(function () {
+                        textElement.innerText = "نص جديد"; // تغيير النص بعد الانتهاء
+                    }, 1000); // الانتظار لمدة ثانية واحدة قبل تغيير النص
+                }
+            }
+
+            animateText(); // بدء التحريك
+        });
+    </script> *@
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var textElement = document.getElementById("moving-text");
+            var textContent = textElement.innerText;
+            var index = 0;
+            var newText = "Technical Supervisor";
+            var isNewText = false;
+
+            setInterval(function () {
+                if (!isNewText) {
+                    if (index < textContent.length) {
+                        textElement.innerText = textContent.slice(0, index + 1);
+                        index++;
+                    } else {
+                        index = 0; // إعادة تعيين الفهرس لبدء التحريك من البداية مرة أخرى
+                        isNewText = true;
+                    }
+                } else {
+                    if (index < newText.length) {
+                        textElement.innerText = newText.slice(0, index + 1);
+                        index++;
+                    } else {
+                        index = 0; // إعادة تعيين الفهرس لبدء التحريك من البداية مرة أخرى
+                        isNewText = false;
+                    }
+                }
+            }, 150); // تحريك حرف كل 100 مللي ثانية
+        });
+    </script>
 </body>
 </html>
